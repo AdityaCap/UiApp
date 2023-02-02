@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="formscript.js"></script>
+    </head>
+    <body onload="mainFunc()">
+        <div>
+            <h2>HTML FORM ELEMENTS</h2>
+            <form id="myform" name="myform" onsubmit="return readFormAndValidate()" >
+                <label> Enter Your Name</label>
+                <input type ="text" name="name" id="name" />
+                <br/><br/>
+                <label >Enter your Email</label>
+                <input type="email"  id="email" name="email"/>
+                <br/><br/>
+                <label >Enter your Password</label>
+                <input type="password"  id="password" name="Password" >
+                <br/><br/>
+                <label > Your Fav Sport </label>
+                <input type="checkbox" value="Cricket" name="sport" id="sport">
+                <label>Cricket</label>
+                &nbsp;&nbsp;
+                <input type="checkbox" value="Chess" name="sport">
+                <label >Chess</label>
+                &nbsp;&nbsp;
+                <input type="checkbox" value="Football" name="sport">
+                <label >FootBall</label>
+                &nbsp;&nbsp;
+                <br/><br/>
+                <label >Are you Still in College</label>
+                <input type="button" value="yes" name="College" >
+                <label for="YES"></label>
+                &nbsp;&nbsp;
+                <input type="button" value="no" name="College" >
+                <label for="no"></label>
+                &nbsp;&nbsp;
+                <br> <br>
+                <label >Enter your Address</label>
+                <textarea name="Adresss"  cols="30" rows="3"></textarea>
+                <br><br>
+                <label>Which City Do you Live</label>
+                <select name="city" >
+                    <option >------SELECT CITY-------</option>
+                    <option value="MUMBAI">MUMBAI</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="DELHI">DELHI</option>
+                </select>
+                <br/><br/>
+                <label >Enter your Age</label>
+                <input type="number" name="age" >
+                <br/><br/>
+                <label >Upload your CV</label>
+                <input type="file" >
+                <br/><br/>
+                <label >Select your Joining date</label>
+                <input type="date" >
+                <br/><br/>
+                <label >Give your Rating</label>
+                <input type="range" min="0" max="5" step="1" name="rating" > 
+                <br/><br/> 
+                <input type="submit" value="Submit your info" >
+                <br/><br/>
+            </form>
+            
+        </div>
+    </body>
+</html>
