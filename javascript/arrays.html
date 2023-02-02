@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <style>
+      .allelements {
+        font-size: larger;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+    </style>
+    <script rel="text/javascript" src="arryasScript.js"></script>
+  </head>
+  <body onLoad="iterateArray()">
+    <div>
+      <h2>All Array Elements</h2>
+      <button onClick="fetchAllElements()">Fetch all Elements</button>
+      <div id="allelements" class="allelements"></div>
+      <div id="arrayLength"></div>
+    </div>
+    <hr />
+    <div>
+      <button onClick="sortArray('ASC')">Sort Array in ASC Order</button>
+      <button onClick="sortArray('DESC')">Sort Array in DESC Order</button>
+    </div>
+    <hr>
+    <hr>
+    <br/><br/>
+    <div>
+        <label >Enter the number of filteration</label>
+        <input type="number" name="num" id="num">
+        <br/><br/>
+        <button onclick="filterArray('SMALL')">SMALL ELEMENTS FILTERATION</button>
+        <button onclick="filterArray('LARGE')">LARGE ELEMENTS FILTERATION</button>
+        <br/><br/>
+        <br/><br/>
+        <label >Enter the number to be searched</label>
+        <input type="number" name="snum" id="snum">
+        <button onclick="searchNum()">Search</button>
+        <div id="searchResult"></div>
+    </div>
+  </body>
+</html>
