@@ -9,17 +9,7 @@ async function getAllPosts() {
     2. convert response to JSON
     3. assign data of API to posts
     */
-  let str = "";
-  posts.forEach((p) => {
-    str =
-      str +
-      '<div class="jumbotron"><h1 class="display-6">' +
-      p.title +
-      '</h1><p class="lead">' +
-      p.body +
-      '</p><hr class="my-4"></div>';
-  });
-  document.getElementById("post").innerHTML = str;
+ displayPosts(posts);
 }
 function showForm() {
   document.getElementById("postform").style.display = "block";
@@ -42,16 +32,29 @@ async function addPost() {
   let data = await response.json();
   posts.push(data);
   posts = posts.sort((p1, p2) => p2.id - p1.id);
-  let str = "";
-  posts.forEach((p) => {
-    str =
-      str +
-      '<div class="jumbotron"><h1 class="display-6">' +
-      p.title +
-      '</h1><p class="lead">' +
-      p.body +
-      '</p><hr class="my-4"></div>';
-  });
-  document.getElementById("post").innerHTML = str;
+  displayPosts(posts);
   document.getElementById("postform").style.display = "none";
+}
+async function deletePost(id)
+{
+    //console.log(id);
+    //Call delete Api
+    response=await fetch('https://jsonplaceholder.typicode.com/posts/'+id,{
+        method:'DELETE',
+    });
+    if(response.status==200){
+        posts=posts.filter(p=>p.id !==id);
+    }
+    displayPosts(posts);
+}
+function displayPosts(posts){
+    let str='';
+    posts.forEach(p => {
+        str = str + '<div class="jumbotron"><h1 class="display-6">' + 
+       
+        p.title + '</h1><p class="lead">' + p.body 
+        + '</p> <button class="btn btn-secondary" onClick="deletePost('
+        + p.id +')">Delete Post</button><hr class="my-4"></div>';
+    });
+     document.getElementById('post').innerHTML=str;
 }
